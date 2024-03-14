@@ -13,3 +13,23 @@ resource "aws_internet_gateway" "vpc_terraform_igw" {
     Name = "vpc_terraform_igw"
   }
 }
+
+resource "aws_route_table" "public_rt" {
+  vpc_id = "vpc-0702f3e84145d8d8c"
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = "igw-0b6c92b2816b9c6ea"
+  }
+
+  tags = {
+    Name = "public_rt"
+  }
+}
+
+resource "aws_eip" "nat_gw_ip" {
+
+  tags = {
+    Name = "nat_gw_ip"
+  }
+}
