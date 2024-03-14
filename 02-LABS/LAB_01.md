@@ -12,6 +12,8 @@ Como forma de organizar o código e facilitar a leitura do mesmo utilize um arqu
 
 Aproveite para fazer seus testes, para todo novo atributo que for criado, faça sempre o `terraform validate`, `terraform plan` para verificar a saída no output e só depois o `terraform apply` 
 
+O laboratorio deve ser executado na região: **"us-east-1"**
+
 Caso haja qualquer erro, leia atentamente o terminal.
 
 1. Crie um novo arquivo de provider e inicialize o Provider.
