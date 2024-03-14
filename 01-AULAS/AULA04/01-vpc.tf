@@ -31,7 +31,7 @@ resource "aws_route_table" "private_rt" {
   vpc_id = "vpc-0702f3e84145d8d8c"
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = "nat-0685547f2b2ca6978"
   }
 
