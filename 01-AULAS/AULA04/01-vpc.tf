@@ -27,6 +27,19 @@ resource "aws_route_table" "public_rt" {
   }
 }
 
+resource "aws_route_table" "private_rt" {
+  vpc_id = "vpc-0702f3e84145d8d8c"
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    nat_gateway_id = "nat-0685547f2b2ca6978"
+  }
+
+  tags = {
+    Name = "private_rt"
+  }
+}
+
 resource "aws_eip" "nat_gw_ip" {
 
   tags = {
