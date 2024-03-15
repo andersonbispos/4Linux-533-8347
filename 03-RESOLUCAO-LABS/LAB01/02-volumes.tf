@@ -1,5 +1,5 @@
 resource "aws_ebs_volume" "example" {
-  availability_zone = "us-east-1c"
+  availability_zone = "us-east-2c"
   size              = 10
   type              = "gp3"
 
