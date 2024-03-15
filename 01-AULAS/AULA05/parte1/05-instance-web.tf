@@ -11,4 +11,6 @@ resource "aws_instance" "web" {
   tags = {
     Name = "web2"
   }
+
+  depends_on = [ aws_instance.db ]
 }
