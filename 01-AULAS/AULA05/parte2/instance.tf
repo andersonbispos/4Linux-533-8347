@@ -5,6 +5,8 @@ resource "aws_instance" "web" {
   instance_type     = "t2.micro"
   subnet_id         = "subnet-0ae37c3e603c653c9"
 
+  vpc_security_group_ids = [ aws_security_group.sg_instance_default.id ]
+
   tags = {
     "Name" = "web2"
   }
@@ -15,8 +17,4 @@ resource "aws_instance" "web" {
     "aula"        = "Aula04"
     "terraform"   = "yes"
   }
-
-  vpc_security_group_ids = [
-    "sg-0a284a22650da62cd",
-  ]
 }

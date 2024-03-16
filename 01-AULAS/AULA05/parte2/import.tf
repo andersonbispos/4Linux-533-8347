@@ -1,10 +1,10 @@
 import {
-  to = aws_subnet.subnet1
+  to = aws_subnet.subnet_felipe1
   id = "subnet-0622147032b4c4668"
 }
 
 import {
-  to = aws_subnet.subnet2
+  to = aws_subnet.subnet_felipe2
   id = "subnet-098fe599b53234140"
 }
 
