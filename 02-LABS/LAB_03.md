@@ -46,7 +46,7 @@ Utilize referências implicitas e explicitas se necessário.
 
 `dica1: lembre-se de habilitar o versionamento e reforçar para que seja um bucket privado`
 
-`dica2: O nome de um bucket precisa ser único a nível de toda a gcp, desse modo pode ser necessario vc testar mais de um nome`
+`dica2: O nome de um bucket precisa ser único a nível de toda a aws, desse modo pode ser necessario vc testar mais de um nome`
 
 10. Crie e aplique o código para criar uma tabela dynamodb para trata o lock do state armazenado no S3.
 
