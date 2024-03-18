@@ -4,9 +4,9 @@
 # __generated__ by Terraform
 resource "aws_subnet" "subnet_felipe2" {
 
-  vpc_id = aws_vpc.vpc_terraform.id
-  availability_zone                              = "us-east-2c"
-  cidr_block                                     = "10.0.20.0/24"
+  vpc_id            = aws_vpc.vpc_terraform.id
+  availability_zone = "us-east-2c"
+  cidr_block        = "10.0.20.0/24"
 
   tags = {
     Name = "subnet2"
@@ -18,10 +18,10 @@ resource "aws_subnet" "subnet_felipe2" {
 
 # __generated__ by Terraform
 resource "aws_subnet" "subnet_felipe1" {
-  vpc_id = aws_vpc.vpc_terraform.id
-  availability_zone                              = "us-east-2b"
+  vpc_id            = aws_vpc.vpc_terraform.id
+  availability_zone = "us-east-2b"
 
-  cidr_block                                     = "10.0.10.0/24"
+  cidr_block = "10.0.10.0/24"
 
   tags = {
     Name = "subnet1"
