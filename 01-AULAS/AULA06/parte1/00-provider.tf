@@ -6,14 +6,14 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket         = "trfm-state-bucket-abs"
-    key            = "terraform-state/lab/terraform.tfstate"
-    region         = "us-east-2"
-    dynamodb_table = "terraform-lock"
-    #access_key = ""
-    #secret_key = ""
-  }
+  # backend "s3" {
+  #   bucket         = "trfm-state-bucket-abs"
+  #   key            = "terraform-state/lab/terraform.tfstate"
+  #   region         = "us-east-2"
+  #   dynamodb_table = "terraform-lock"
+  #   #access_key = ""
+  #   #secret_key = ""
+  # }
 
 }
 
