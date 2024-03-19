@@ -19,14 +19,16 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  region = "us-east-2"
+  region = local.default_region
 
   default_tags {
-    tags = {
-      Environment = "lab-4linux"
-      terraform   = "yes"
-      aula        = "Aula04"
-    }
+    # tags = {
+    #   Environment = "lab-4linux"
+    #   terraform   = "yes"
+    #   aula        = "Aula04"
+    # }
+
+    tags = local.common_tags
   }
 }
 
