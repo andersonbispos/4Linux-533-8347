@@ -37,37 +37,37 @@ variable "private_cidr" {
 
 # variaveis das instancias
 
-variable "amazon_ami"{
+variable "amazon_ami" {
   description = "default_ami"
-  type = string
-  default = "ami-0e0bf53f6def86294"
+  type        = string
+  default     = "ami-0e0bf53f6def86294"
 }
 
-variable "default_instance_type" { 
+variable "default_instance_type" {
   description = "instance_type"
-  type = string
-  default = "t2.micro"
+  type        = string
+  default     = "t2.micro"
 }
 
 variable "default_user_data" {
   description = "default_user_data"
-  type = string
-  default = "#!/bin/bash\n sudo yum install nginx -y; sudo systemctl enable nginx; sudo systemctl start nginx"
+  type        = string
+  default     = "#!/bin/bash\n sudo yum install nginx -y; sudo systemctl enable nginx; sudo systemctl start nginx"
 }
 
-variable "volume_type" { 
+variable "volume_type" {
   description = "volume_type"
-  type = string
-  default = "gp3"
+  type        = string
+  default     = "gp3"
 }
 
-variable "volume_size" { 
+variable "volume_size" {
   description = "volume_size"
-  type = number
-  default = 10
+  type        = number
+  default     = 10
 
   validation {
-    condition = var.volume_size <= 50
+    condition     = var.volume_size <= 50
     error_message = "o tamanho do volume deve ser menor que 50G"
   }
 }

@@ -4,7 +4,7 @@ resource "aws_instance" "web" {
 
   subnet_id = aws_subnet.subnet_public_2a.id
 
-  vpc_security_group_ids = [ aws_security_group.sg_default.id ]
+  vpc_security_group_ids = [aws_security_group.sg_default.id]
 
   user_data = base64encode(var.default_user_data)
 
@@ -12,5 +12,5 @@ resource "aws_instance" "web" {
     Name = "web1"
   }
 
-  depends_on = [ aws_instance.db ]
+  depends_on = [aws_instance.db]
 }
