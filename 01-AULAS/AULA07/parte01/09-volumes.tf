@@ -1,7 +1,7 @@
 resource "aws_ebs_volume" "web_data01" {
   availability_zone = aws_subnet.subnet_public_2a.availability_zone
-  size              = 10
-  type              = "gp3"
+  size              = var.volume_size
+  type              = var.volume_type
 
   tags = {
     Name = "web-data01"

@@ -54,3 +54,20 @@ variable "default_user_data" {
   type = string
   default = "#!/bin/bash\n sudo yum install nginx -y; sudo systemctl enable nginx; sudo systemctl start nginx"
 }
+
+variable "volume_type" { 
+  description = "volume_type"
+  type = string
+  default = "gp3"
+}
+
+variable "volume_size" { 
+  description = "volume_size"
+  type = number
+  default = 10
+
+  validation {
+    condition = var.volume_size <= 50
+    error_message = "o tamanho do volume deve ser menor que 50G"
+  }
+}
