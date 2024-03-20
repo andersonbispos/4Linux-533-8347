@@ -34,3 +34,23 @@ variable "private_cidr" {
   type        = string
   default     = "10.10.2.0/24"
 }
+
+# variaveis das instancias
+
+variable "amazon_ami"{
+  description = "default_ami"
+  type = string
+  default = "ami-0e0bf53f6def86294"
+}
+
+variable "default_instance_type" { 
+  description = "instance_type"
+  type = string
+  default = "t2.micro"
+}
+
+variable "default_user_data" {
+  description = "default_user_data"
+  type = string
+  default = "#!/bin/bash\n sudo yum install nginx -y; sudo systemctl enable nginx; sudo systemctl start nginx"
+}
