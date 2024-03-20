@@ -6,7 +6,7 @@ resource "aws_subnet" "subnet_public_2a" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "subnet_public_2a"
+    Name = format("%s-public-%s", var.vpc_name, var.subnet_zone)
   }
 }
 
@@ -17,6 +17,6 @@ resource "aws_subnet" "subnet_private_2a" {
   availability_zone = var.subnet_zone
 
   tags = {
-    Name = "subnet_private_2a"
+    Name = format("%s-private-%s", var.vpc_name, var.subnet_zone)
   }
 }

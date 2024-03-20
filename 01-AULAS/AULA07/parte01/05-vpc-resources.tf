@@ -2,7 +2,7 @@ resource "aws_internet_gateway" "vpc_terraform_igw" {
   vpc_id = aws_vpc.vpc_terraform.id
 
   tags = {
-    Name = "vpc_terraform_igw"
+    Name = format("%s-igw", var.vpc_name)
   }
 }
 
@@ -15,7 +15,7 @@ resource "aws_route_table" "public_rt" {
   }
 
   tags = {
-    Name = "public_rt"
+    Name = format("%s-public-rtb", var.vpc_name)
   }
 }
 
