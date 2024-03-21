@@ -60,7 +60,7 @@ Além disso será criado uma configuração de output para exibir algumas inform
 
 1. Copie os arquivos que contem as definições do **disco** e das instâncias, **dbserver1**, **web1** e **web2** da pasta do LAB02 para a pasta do LAB04.
 
-1.  Crie um novo arquivo locals e defina um novo `local` com o nome **db_zone**, para definir qual zona (us-east1-c) deve ser utilizada para criar o disco e também o servidor de banco.
+1.  Crie um novo arquivo locals e defina um novo `local` com o nome **db_zone**, para definir qual zona (sa-east1-c) deve ser utilizada para criar o disco e também o servidor de banco.
 
 1. Crie uma variável do tipo number para definir o tamanho do disco a ser criado. Faça as alterações devidas no arquivo do disco.
 
