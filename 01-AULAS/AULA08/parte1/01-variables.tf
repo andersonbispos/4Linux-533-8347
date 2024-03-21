@@ -1,7 +1,7 @@
-variable "default_ami" {
-  description = "default_ami"
-  type = string
-  default = "ami-08af887b5731562d3"
+variable "qtd_vms" {
+    description = "Quantas WEBs devo criar"
+    type = number
+    default = 4
 }
 
 variable "default_instance_size" {

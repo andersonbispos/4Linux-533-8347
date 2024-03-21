@@ -26,7 +26,7 @@ data "aws_ami" "ami_amazon_linux" {
 
 resource "aws_instance" "web_modelo" {
 
-  count = 2
+  count = var.qtd_vms
 
   ami           = data.aws_ami.ami_amazon_linux.id
   instance_type = var.default_instance_size
@@ -37,7 +37,24 @@ resource "aws_instance" "web_modelo" {
 
   tags = {
     # Name = "${var.web_modelo}_${count.index}"
-    Name = format("%s-%s", var.web_modelo, count.index )
+    Name = format("%s_%s", var.web_modelo, count.index )
   }
 
 }
+
+output "webs_publics_names" {
+  value = aws_instance.web_modelo[*].tags.Name
+}
+
+output "webs_publics_ips" {
+  value = aws_instance.web_modelo[*].public_ip
+}
+
+## outputs individuais
+# output "web0" {
+#   value = aws_instance.web_modelo[0].public_ip
+# }
+
+# output "web1" {
+#   value = aws_instance.web_modelo[1].public_ip
+# }
