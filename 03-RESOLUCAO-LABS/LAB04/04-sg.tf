@@ -1,6 +1,6 @@
 resource "aws_security_group" "allow_default_ports" {
-  name        = "allow_default_ports"
-  description = "allow_default_ports"
+  name        = format("allow_default_ports_%s_sg", var.vpc_name)
+  description = format("allow_default_ports_%s_sg", var.vpc_name)
 
   vpc_id = aws_vpc.tf-vpc-lab.id
 
@@ -29,13 +29,13 @@ resource "aws_security_group" "allow_default_ports" {
   }
 
   tags = {
-    Name = "allow_default_ports"
+    Name = format("allow_default_ports_%s_sg", var.vpc_name)
   }
 }
 
 resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
-  description = "allow_ssh"
+  name        = format("allow_ssh_%s_sg", var.vpc_name)
+  description = format("allow_ssh_%s_sg", var.vpc_name)
 
   vpc_id = aws_vpc.tf-vpc-lab.id
 
@@ -56,6 +56,6 @@ resource "aws_security_group" "allow_ssh" {
   }
 
   tags = {
-    Name = "allow_ssh"
+    Name = format("allow_ssh_%s_sg", var.vpc_name)
   }
 }
