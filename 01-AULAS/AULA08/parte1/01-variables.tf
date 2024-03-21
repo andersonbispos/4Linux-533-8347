@@ -13,23 +13,11 @@ variable "default_instance_size" {
 variable "default_user_data" {
   description = "default_user_data"
   type        = string
-  default     = "#!/bin/bash\n sudo apt update; sudo apt install nginx -y"
+  default     = "#!/bin/bash\n sudo yum install nginx -y; sudo systemctl enable nginx; sudo systemctl start nginx"
 }
 
-variable "web1_name" {
-  description = "web1_name"
+variable "web_modelo" {
+  description = "web_modelo"
   type        = string
-  default     = "web1"
-}
-
-variable "web2_name" {
-  description = "web2_name"
-  type        = string
-  default     = "web2"
-}
-
-variable "dbserver1_name" {
-  description = "dbserver1_name"
-  type        = string
-  default     = "dbserver1"
+  default     = "web_modelo"
 }
