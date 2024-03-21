@@ -36,7 +36,8 @@ resource "aws_instance" "web_modelo" {
   user_data = base64encode(var.default_user_data)
 
   tags = {
-    Name = var.web_modelo
+    # Name = "${var.web_modelo}_${count.index}"
+    Name = format("%s-%s", var.web_modelo, count.index )
   }
 
 }
