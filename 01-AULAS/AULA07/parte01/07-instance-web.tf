@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami           = var.amazon_ami
+  ami           = data.aws_ami.ami_amazon_linux.id
   instance_type = var.default_instance_type
 
   subnet_id = aws_subnet.subnet_public_2a.id
