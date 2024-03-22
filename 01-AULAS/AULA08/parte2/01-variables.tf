@@ -109,3 +109,15 @@ variable "disco_definicoes_tuple" {
   type    = tuple([string, string, number])
   default = ["us-east-2c", "gp3", 20]
 }
+
+variable "disco_definicoes_object" {
+  type = object(
+    { zona = string,
+      tipo = string,
+      size = number })
+  default = {
+    zona = "us-east-2c"
+    tipo = "gp3"
+    size = 30
+  }
+}
