@@ -27,8 +27,7 @@ resource "aws_subnet" "subnet2" {
   map_public_ip_on_launch = var.public_ip_enabled
 
   tags = {
-    # Name = format("subnet-%s-%s", var.vpc_name, var.subnet2_zone)
-    Name = local.subnet2_name_concat
+    Name = format("subnet-%s-%s", var.vpc_name, var.subnet2_zone)
   }
 }
 

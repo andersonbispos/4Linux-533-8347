@@ -12,7 +12,7 @@ variable "vpc_cidr" {
   default     = "192.168.0.0/16"
 }
 
-## variaveis das subnets
+## variaveis das subnets - simples
 
 variable "public_ip_enabled" {
   description = "Define se a subnet deve habilitar por padrão ips publicos"
@@ -41,6 +41,20 @@ variable "subnet2_zone" {
   description = "Zone em que sera criada a subnet2"
   type        = string
   default     = "sa-east-1c"
+}
+
+## variaveis das subnets - list
+
+variable "subnets_cidr_list" {
+  description = "Bloco CIDR para ser utilizado nas subnets"
+  type = list(string)
+  default = [ "192.168.10.0/24", "192.168.20.0/24" ]
+}
+
+variable "subnets_zones_list" {
+  description = "Lista de Zonas onde serão criadas as subnets"
+  type = list(string)
+  default = [ "192.168.10.0/24", "192.168.20.0/24" ]
 }
 
 ## NAO EH PERMITIDO REFERENCIAR UMA VARIAVEL AO SE DEFINIR OUTRA VARIAVEL
