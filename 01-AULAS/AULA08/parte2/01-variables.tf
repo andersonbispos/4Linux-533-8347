@@ -49,13 +49,13 @@ variable "subnet2_zone" {
 variable "subnets_cidr_list" {
   description = "Bloco CIDR para ser utilizado nas subnets"
   type        = list(string)
-  default     = ["192.168.10.0/24", "192.168.20.0/24"]
+  default     = ["192.168.10.0/24", "192.168.20.0/24", "192.168.30.0/24" ]
 }
 
 variable "subnets_zones_list" {
   description = "Lista de Zonas onde serão criadas as subnets"
   type        = list(string)
-  default     = ["us-east-2b", "us-east-2c"]
+  default     = ["us-east-2b", "us-east-2c", "us-east-2a"]
 }
 
 ## NAO EH PERMITIDO REFERENCIAR UMA VARIAVEL AO SE DEFINIR OUTRA VARIAVEL
