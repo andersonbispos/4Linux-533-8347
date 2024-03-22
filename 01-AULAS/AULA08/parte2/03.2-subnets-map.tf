@@ -4,13 +4,13 @@ resource "aws_subnet" "subnet0" {
 
   vpc_id = aws_vpc.tf-vpc-lab.id
 
-  cidr_block = var.subnets_cidr_list[count.index]
+  cidr_block = var.subnets_cidr_map["subnet0"]
 
-  availability_zone       = var.subnets_zones_list[count.index]
+  availability_zone       = var.subnets_zone_map["subnet0"]
   map_public_ip_on_launch = var.public_ip_enabled
 
   tags = {
-    Name = format("subnet-%s-%s", var.vpc_name, var.subnets_zones_list[count.index])
+    Name = format("subnet-%s-%s", var.vpc_name, var.subnets_zone_map["subnet0"])
   }
 
 }
