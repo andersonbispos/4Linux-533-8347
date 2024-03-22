@@ -15,6 +15,10 @@ resource "aws_subnet" "subnets" {
 
 }
 
+output "subnet_ids" {
+  value = values(aws_subnet.subnets)[*].id
+}
+
 #subnets com maps
 
 # resource "aws_subnet" "subnet0" {
