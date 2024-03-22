@@ -78,6 +78,15 @@ variable "subnets_zone_map" {
   }
 }
 
+variable "map_subnets_zone_cidr" {
+  description =  "Lista de Zonas onde serão criadas as subnets"
+  type = map(string)
+  default = {
+    us-east-2a = "192.168.10.0/24"
+    us-east-2b = "192.168.20.0/24"
+  }
+}
+
 ## exemplo pratico de map
 
 variable "instance_sizes" {
