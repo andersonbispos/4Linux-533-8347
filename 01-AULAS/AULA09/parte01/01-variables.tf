@@ -32,3 +32,12 @@ variable "instance_images" {
     prod = "ami-01f451f00dae38302" # <- Amazon Linux - sa-east-1
   }
 }
+
+variable "instance_types" {
+  description = "Tamanho da instancia"
+  type        = map(string)
+  default = {
+    dev  = "t3a.micro"
+    prod = "t3a.medium"
+  }
+}
