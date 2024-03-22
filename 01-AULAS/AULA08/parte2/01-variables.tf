@@ -49,7 +49,7 @@ variable "subnet2_zone" {
 variable "subnets_cidr_list" {
   description = "Bloco CIDR para ser utilizado nas subnets"
   type        = list(string)
-  default     = ["192.168.10.0/24", "192.168.20.0/24", "192.168.30.0/24" ]
+  default     = ["192.168.10.0/24", "192.168.20.0/24", "192.168.30.0/24"]
 }
 
 variable "subnets_zones_list" {
@@ -61,8 +61,8 @@ variable "subnets_zones_list" {
 ## variaveis das subnets - map
 
 variable "subnets_cidr_map" {
-  description =  "Bloco CIDR para ser utilizado nas subnets"
-  type = map(string)
+  description = "Bloco CIDR para ser utilizado nas subnets"
+  type        = map(string)
   default = {
     subnet0 = "192.168.10.0/24"
     subnet1 = "192.168.20.0/24"
@@ -70,8 +70,8 @@ variable "subnets_cidr_map" {
 }
 
 variable "subnets_zone_map" {
-  description =  "Lista de Zonas onde serão criadas as subnets"
-  type = map(string)
+  description = "Lista de Zonas onde serão criadas as subnets"
+  type        = map(string)
   default = {
     subnet0 = "us-east-2a"
     subnet1 = "us-east-2b"
@@ -79,8 +79,8 @@ variable "subnets_zone_map" {
 }
 
 variable "map_subnets_zone_cidr" {
-  description =  "Lista de Zonas onde serão criadas as subnets"
-  type = map(string)
+  description = "Lista de Zonas onde serão criadas as subnets"
+  type        = map(string)
   default = {
     us-east-2a = "192.168.10.0/24"
     us-east-2b = "192.168.20.0/24"
@@ -103,59 +103,9 @@ variable "instance_sizes" {
   }
 }
 
-## NAO EH PERMITIDO REFERENCIAR UMA VARIAVEL AO SE DEFINIR OUTRA VARIAVEL
-# variable "subnet2_name" {
-#   description = "subnet2_name"
-#   type        = string
-# #  default     = format("subnet-%s-%s", var.vpc_name, var.subnet2_zone) <- nao permitido aqui
-#   default     = "subnet-${var.vpc_name}-${var.subnet2_zone}" <- não é permitido
-# }
+## definindo os paramentros do disco
 
-## variaveis de processamento
-
-variable "volume_size" {
-  description = "volume_size"
-  type        = number
-  default     = 10
-
-  validation {
-    condition     = var.volume_size <= 50
-    error_message = "o tamanho do volume deve ser menor que 50G"
-  }
-}
-
-variable "default_ami" {
-  description = "default_ami"
-  type        = string
-  default     = "ami-08af887b5731562d3"
-}
-
-variable "default_instance_size" {
-  description = "default_instance_size"
-  type        = string
-  default     = "t3.micro"
-}
-
-variable "default_user_data" {
-  description = "default_user_data"
-  type        = string
-  default     = "#!/bin/bash\n sudo apt update; sudo apt install nginx -y"
-}
-
-variable "web1_name" {
-  description = "web1_name"
-  type        = string
-  default     = "web1"
-}
-
-variable "web2_name" {
-  description = "web2_name"
-  type        = string
-  default     = "web2"
-}
-
-variable "dbserver1_name" {
-  description = "dbserver1_name"
-  type        = string
-  default     = "dbserver1"
+variable "disco_definicoes_tuple" {
+  type    = tuple([string, string, number])
+  default = ["us-east-2c", "gp3", 20]
 }

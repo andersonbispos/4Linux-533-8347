@@ -44,7 +44,7 @@ resource "aws_subnet" "subnets" {
 #   tags = {
 #     Name = format("subnet-%s-%s", var.vpc_name,var.subnets_zone_map["subnet1"])
 #   }
-  
+
 # }
 
 
