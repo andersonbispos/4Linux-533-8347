@@ -54,7 +54,7 @@ variable "subnets_cidr_list" {
 variable "subnets_zones_list" {
   description = "Lista de Zonas onde serão criadas as subnets"
   type = list(string)
-  default = [ "192.168.10.0/24", "192.168.20.0/24" ]
+  default = [ "sa-east-1b", "sa-east-1c" ]
 }
 
 ## NAO EH PERMITIDO REFERENCIAR UMA VARIAVEL AO SE DEFINIR OUTRA VARIAVEL
