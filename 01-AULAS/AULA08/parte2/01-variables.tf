@@ -73,8 +73,8 @@ variable "subnets_zone_map" {
   description =  "Lista de Zonas onde serão criadas as subnets"
   type = map(string)
   default = {
-    subnet0 = "192.168.10.0/24"
-    subnet1 = "192.168.20.0/24"
+    subnet0 = "us-east-2a"
+    subnet1 = "us-east-2b"
   }
 }
 
