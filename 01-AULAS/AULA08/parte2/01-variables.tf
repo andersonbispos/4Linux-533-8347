@@ -58,6 +58,26 @@ variable "subnets_zones_list" {
   default     = ["us-east-2b", "us-east-2c", "us-east-2a"]
 }
 
+## variaveis das subnets - map
+
+variable "subnets_cidr_map" {
+  description =  "Bloco CIDR para ser utilizado nas subnets"
+  type = map(string)
+  default = {
+    subnet0 = "192.168.10.0/24"
+    subnet1 = "192.168.20.0/24"
+  }
+}
+
+variable "subnets_zone_map" {
+  description =  "Lista de Zonas onde serão criadas as subnets"
+  type = map(string)
+  default = {
+    subnet0 = "192.168.10.0/24"
+    subnet1 = "192.168.20.0/24"
+  }
+}
+
 ## NAO EH PERMITIDO REFERENCIAR UMA VARIAVEL AO SE DEFINIR OUTRA VARIAVEL
 # variable "subnet2_name" {
 #   description = "subnet2_name"

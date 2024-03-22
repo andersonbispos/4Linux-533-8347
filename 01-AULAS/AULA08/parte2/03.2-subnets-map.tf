@@ -1,4 +1,4 @@
-#subnets com indice
+#subnets com maps
 
 resource "aws_subnet" "subnets" {
 
@@ -17,10 +17,10 @@ resource "aws_subnet" "subnets" {
 
 }
 
-resource "aws_route_table_association" "rt_public_subnets_association" {
+# resource "aws_route_table_association" "rt_public_subnets_association" {
 
-  count = length(var.subnets_zones_list)
+#   count = length(var.subnets_zones_list)
 
-  subnet_id      = aws_subnet.subnets[count.index].id
-  route_table_id = aws_route_table.rt_public.id
-}
+#   subnet_id      = aws_subnet.subnets[count.index].id
+#   route_table_id = aws_route_table.rt_public.id
+# }
