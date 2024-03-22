@@ -29,7 +29,7 @@ variable "subnet1_cidr" {
 variable "subnet1_zone" {
   description = "Zone em que sera criada a subnet1"
   type        = string
-  default     = "sa-east-1b"
+  default     = "us-east-2b"
 }
 
 variable "subnet2_cidr" {
@@ -41,7 +41,7 @@ variable "subnet2_cidr" {
 variable "subnet2_zone" {
   description = "Zone em que sera criada a subnet2"
   type        = string
-  default     = "sa-east-1c"
+  default     = "us-east-2c"
 }
 
 ## variaveis das subnets - list
@@ -55,7 +55,7 @@ variable "subnets_cidr_list" {
 variable "subnets_zones_list" {
   description = "Lista de Zonas onde serão criadas as subnets"
   type        = list(string)
-  default     = ["sa-east-1b", "sa-east-1c"]
+  default     = ["us-east-2b", "us-east-2c"]
 }
 
 ## NAO EH PERMITIDO REFERENCIAR UMA VARIAVEL AO SE DEFINIR OUTRA VARIAVEL
