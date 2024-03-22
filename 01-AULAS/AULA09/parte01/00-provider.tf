@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "aws" {
-  region = local.default_region
+  region = var.ambientes[terraform.workspace]
 
   default_tags {
     tags = local.common_tags
