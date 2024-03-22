@@ -3,7 +3,7 @@
 variable "vpc_name" {
   description = "Nome para ser utilizado ao criar a VPC"
   type        = string
-  default     = "tf-vpc-lab"
+  default     = "vpc_aula08"
 }
 
 variable "vpc_cidr" {
@@ -17,6 +17,7 @@ variable "vpc_cidr" {
 variable "public_ip_enabled" {
   description = "Define se a subnet deve habilitar por padrão ips publicos"
   type        = bool
+  default     = true
 }
 
 variable "subnet1_cidr" {
@@ -35,7 +36,7 @@ variable "subnet2_cidr" {
   description = "Bloco CIDR para ser utilizado na subnet2"
   type        = string
   default     = "192.168.20.0/24"
-}#
+} #
 
 variable "subnet2_zone" {
   description = "Zone em que sera criada a subnet2"
@@ -47,14 +48,14 @@ variable "subnet2_zone" {
 
 variable "subnets_cidr_list" {
   description = "Bloco CIDR para ser utilizado nas subnets"
-  type = list(string)
-  default = [ "192.168.10.0/24", "192.168.20.0/24" ]
+  type        = list(string)
+  default     = ["192.168.10.0/24", "192.168.20.0/24"]
 }
 
 variable "subnets_zones_list" {
   description = "Lista de Zonas onde serão criadas as subnets"
-  type = list(string)
-  default = [ "sa-east-1b", "sa-east-1c" ]
+  type        = list(string)
+  default     = ["sa-east-1b", "sa-east-1c"]
 }
 
 ## NAO EH PERMITIDO REFERENCIAR UMA VARIAVEL AO SE DEFINIR OUTRA VARIAVEL
@@ -80,14 +81,14 @@ variable "volume_size" {
 
 variable "default_ami" {
   description = "default_ami"
-  type = string
-  default = "ami-08af887b5731562d3"
+  type        = string
+  default     = "ami-08af887b5731562d3"
 }
 
 variable "default_instance_size" {
   description = "default_instance_size"
-  type = string
-  default = "t3.micro"
+  type        = string
+  default     = "t3.micro"
 }
 
 variable "default_user_data" {
