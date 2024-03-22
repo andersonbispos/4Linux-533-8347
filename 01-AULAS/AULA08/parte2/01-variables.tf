@@ -78,6 +78,22 @@ variable "subnets_zone_map" {
   }
 }
 
+## exemplo pratico de map
+
+variable "instance_sizes" {
+  description = "tamanhos de instancias na AWS"
+  type        = map(string)
+  default = {
+    cpu2ram2    = "t3a.small"
+    cpu2ram4    = "t3a.medium"
+    cpu2ram8    = "t3a.large"
+    cpu4ram16   = "t3a.xlarge"
+    cpu8ram32   = "t3a.2xlarge"
+    cpu16ram64  = "m5a.4xlarge"
+    cpu32ram128 = "m5a.8xlarge"
+  }
+}
+
 ## NAO EH PERMITIDO REFERENCIAR UMA VARIAVEL AO SE DEFINIR OUTRA VARIAVEL
 # variable "subnet2_name" {
 #   description = "subnet2_name"
