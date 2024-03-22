@@ -17,12 +17,10 @@ resource "aws_subnet" "subnets" {
 
 }
 
-# resource "aws_route_table_association" "rt_public_subnet1_association" {
-#   subnet_id      = aws_subnet.subnet1.id
-#   route_table_id = aws_route_table.rt_public.id
-# }
+resource "aws_route_table_association" "rt_public_subnets_association" {
 
-# resource "aws_route_table_association" "rt_public_subnet2_association" {
-#   subnet_id      = aws_subnet.subnet2.id
-#   route_table_id = aws_route_table.rt_public.id
-# }
+  count = length(var.subnets_zones_list)
+
+  subnet_id      = aws_subnet.subnets[count.index].id
+  route_table_id = aws_route_table.rt_public.id
+}
