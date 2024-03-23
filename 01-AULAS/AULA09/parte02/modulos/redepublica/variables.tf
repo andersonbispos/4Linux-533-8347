@@ -3,14 +3,13 @@ variable "vpc_cidr" {
   type        = string
 }
 
+variable "region" {
+  description = "regiao onde o ambiente sera provisionado"
+  type        = string
+}
+
 variable "vpc_name" {
   description = "Nome para ser utilizado ao criar a VPC"
   type        = string
   default     = "vpc_modulo"
-}
-
-variable "subnet_zone" {
-  description = "zona para ser utilizado ao criar a subnet"
-  type        = string
-  default     = "us-east-2a"
 }
