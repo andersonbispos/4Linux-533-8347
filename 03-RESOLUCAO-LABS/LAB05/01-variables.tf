@@ -5,7 +5,7 @@ variable "ambientes" {
     "dev"  = "us-east-2"
     "prod" = "sa-east-1"
   }
-}w
+}
 
 ## variaveis da VPC
 
