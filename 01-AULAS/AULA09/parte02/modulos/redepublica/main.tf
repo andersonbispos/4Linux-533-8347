@@ -36,15 +36,15 @@ resource "aws_subnet" "subnet_public" {
 
   cidr_block = cidrsubnet(var.vpc_cidr,8,1)
 
-  availability_zone       = format("$sa", var.region)
+  availability_zone       = format("%sa", var.region)
   map_public_ip_on_launch = true
 
   tags = {
-    Name = format("%s-public-%s", var.vpc_name, format("$sa", var.region))
+    Name = format("%s-public-%s", var.vpc_name, format("%sa", var.region))
   }
 }
 
 resource "aws_route_table_association" "public_rt_to_subnet_public" {
   subnet_id      = aws_subnet.subnet_public.id
-  route_table_id = aws_route_table.public_rt.id
+  route_table_id = aws_route_table.rt_public.id
 }
