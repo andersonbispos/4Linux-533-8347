@@ -36,10 +36,10 @@ resource "aws_subnet" "subnet_public_2a" {
 
   cidr_block = cidrsubnet(var.vpc_cidr,8,1)
 
-  availability_zone       = var.subnet_zone
+  availability_zone       = format("$sa", var.region)
   map_public_ip_on_launch = true
 
   tags = {
-    Name = format("%s-public-%s", var.vpc_name, var.subnet_zone)
+    Name = format("%s-public-%s", var.vpc_name, format("$sa", var.region))
   }
 }
