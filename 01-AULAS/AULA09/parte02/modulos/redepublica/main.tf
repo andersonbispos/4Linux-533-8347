@@ -31,7 +31,7 @@ resource "aws_route_table" "rt_public" {
   }
 }
 
-resource "aws_subnet" "subnet_public_2a" {
+resource "aws_subnet" "subnet_public" {
   vpc_id     = aws_vpc.vpc_4linux.id
 
   cidr_block = cidrsubnet(var.vpc_cidr,8,1)
@@ -42,4 +42,9 @@ resource "aws_subnet" "subnet_public_2a" {
   tags = {
     Name = format("%s-public-%s", var.vpc_name, format("$sa", var.region))
   }
+}
+
+resource "aws_route_table_association" "public_rt_to_subnet_public" {
+  subnet_id      = aws_subnet.subnet_public.id
+  route_table_id = aws_route_table.public_rt.id
 }
