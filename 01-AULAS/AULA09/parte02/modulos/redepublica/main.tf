@@ -31,3 +31,15 @@ resource "aws_route_table" "rt_public" {
   }
 }
 
+resource "aws_subnet" "subnet_public_2a" {
+  vpc_id     = aws_vpc.vpc_4linux.id
+
+  cidr_block = cidrsubnet(var.vpc_cidr,8,1)
+
+  availability_zone       = var.subnet_zone
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = format("%s-public-%s", var.vpc_name, var.subnet_zone)
+  }
+}
