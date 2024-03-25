@@ -11,7 +11,7 @@ resource "aws_instance" "web" {
 
   subnet_id = module.rede.subnet_id
 
-  # vpc_security_group_ids = ["sg-079711cb02c0b71b2"]
+  vpc_security_group_ids = aws_security_group.sg_default.id
 
   tags = {
     Name = "web"
