@@ -1,3 +1,7 @@
+# modulo rede
+
+Cria uma rede publica pronta para uso com 1 subnet e os demais recursos necessários
+
 ## Requirements
 
 No requirements.
