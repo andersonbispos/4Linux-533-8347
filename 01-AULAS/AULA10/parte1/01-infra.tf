@@ -17,11 +17,3 @@ resource "aws_instance" "web" {
     Name = "web"
   }
 }
-
-# output "web_public_ip" {
-#   value = aws_instance.web.public_ip
-# }
-
-# output "public_rt_id" {
-#   value = module.rede.public_route_table_id  
-# }
