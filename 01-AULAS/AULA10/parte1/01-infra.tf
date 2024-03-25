@@ -1,3 +1,6 @@
+# git tag -a 1.0 -m "modulo sem security group"
+# git tag -a 1.5 -m "modulo com security group"
+
 module "rede" {
   source = "git::https://github.com/andersonbispos/4Linux-533-8347.git//01-AULAS/AULA09/parte02/modulos/redepublica"
 
