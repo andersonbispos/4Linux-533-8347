@@ -16,3 +16,18 @@ module "vpc" {
     Environment = "dev"
   }
 }
+
+resource "aws_instance" "web3" {
+  ami           = "ami-0e0bf53f6def86294"
+  instance_type = "t3.micro"
+
+  subnet_id = module.rede_com_sg.subnet_id
+
+  tags = {
+    Name = "web3"
+  }
+}
+
+output "web3_public_ip" {
+    value = aws_instance.web3.public_ip  
+}
