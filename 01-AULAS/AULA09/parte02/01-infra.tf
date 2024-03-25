@@ -9,7 +9,7 @@ resource "aws_instance" "web" {
   ami           = "ami-0e0bf53f6def86294"
   instance_type = "t3.micro"
 
-  subnet_id = module.rede.aws_subnet.subnet_public.id
+  subnet_id = module.rede.subnet_id
 
   # vpc_security_group_ids = ["sg-079711cb02c0b71b2"]
 
@@ -18,3 +18,10 @@ resource "aws_instance" "web" {
   }
 }
 
+output "web_public_ip" {
+  value = aws_instance.web.public_ip
+}
+
+output "public_rt_id" {
+  value = module.rede.public_route_table_id  
+}
