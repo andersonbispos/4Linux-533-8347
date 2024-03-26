@@ -21,7 +21,7 @@ resource "aws_instance" "web3" {
   ami           = "ami-0e0bf53f6def86294"
   instance_type = "t3.micro"
 
-  subnet_id = module.rede_com_sg.subnet_id
+  subnet_id = module.vpc.public_subnets[0]
 
   tags = {
     Name = "web3"
