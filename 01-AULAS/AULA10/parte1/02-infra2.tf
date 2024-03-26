@@ -25,6 +25,8 @@ resource "aws_instance" "web3" {
 
   subnet_id = module.vpc.public_subnets[0]
 
+  associate_public_ip_address = true
+
   tags = {
     Name = "web3"
   }
